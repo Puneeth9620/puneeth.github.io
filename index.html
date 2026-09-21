@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Puneeth | Supply Chain & Operations</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #07100d;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            background: rgba(7,16,13,0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #72f0b2;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #72f0b2;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 8% 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .small-title {
+            color: #72f0b2;
+            letter-spacing: 3px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(50px, 8vw, 90px);
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        .hero h1 span {
+            color: #72f0b2;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 19px;
+            max-width: 650px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            margin-right: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #72f0b2;
+            color: #07100d;
+        }
+
+        .secondary {
+            border: 1px solid #394d44;
+            color: white;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            color: #72f0b2;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 42px;
+            margin: 10px 0 30px;
+        }
+
+        .about-text {
+            max-width: 750px;
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        /* Control Tower */
+
+        .control-tower {
+            margin-top: 50px;
+            padding: 35px;
+            border: 1px solid #294239;
+            border-radius: 20px;
+            background: #0d1915;
+        }
+
+        .tower-title {
+            color: #72f0b2;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .node {
+            flex: 1;
+            padding: 25px;
+            background: #09130f;
+            border: 1px solid #294239;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .node h3 {
+            color: #72f0b2;
+            margin-bottom: 8px;
+        }
+
+        .node p {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .arrow {
+            color: #72f0b2;
+            font-size: 25px;
+        }
+
+        /* Experience */
+
+        .experience {
+            max-width: 900px;
+            border-left: 2px solid #72f0b2;
+            padding-left: 30px;
+        }
+
+        .experience h3 {
+            font-size: 25px;
+        }
+
+        .company {
+            color: #72f0b2;
+            margin: 5px 0 15px;
+        }
+
+        .experience p,
+        .experience li {
+            color: #aaa;
+        }
+
+        .experience ul {
+            padding-left: 20px;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 12px 18px;
+            border: 1px solid #294239;
+            border-radius: 8px;
+            background: #0d1915;
+        }
+
+        /* Projects */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            padding: 30px;
+            border: 1px solid #294239;
+            border-radius: 15px;
+            background: #0d1915;
+        }
+
+        .project h3 {
+            color: #72f0b2;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #999;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 30px 8%;
+            border-top: 1px solid #294239;
+            color: #777;
+            text-align: center;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 55px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            PUNEETH.
+        </div>
+
+        <ul>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#experience">Experience</a></li>
+
+            <li><a href="#projects">Projects</a></li>
+
+            <li><a href="#skills">Skills</a></li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Supply Chain • Procurement • Analytics
+            </div>
+
+            <h1>
+                Building better
+                <span>operations.</span>
+            </h1>
+
+            <p>
+                I'm Puneeth — a supply chain and procurement professional
+                interested in using data, technology and AI to improve
+                operational decisions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    Explore My Work
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="section-title">
+            01 / About
+        </div>
+
+        <h2>
+            Operations-minded. Data-driven.
+        </h2>
+
+        <p class="about-text">
+
+            I have hands-on experience in supply chain operations and
+            procurement, including vendor coordination, purchase orders,
+            inventory management, warehouse operations and PO–invoice
+            reconciliation.
+
+            <br><br>
+
+            I'm currently expanding my skills in Excel, Power BI,
+            data analytics and AI to build a career at the intersection
+            of supply chain and technology.
+
+        </p>
+
+
+        <!-- Supply Chain Control Tower -->
+
+        <div class="control-tower">
+
+            <div class="tower-title">
+                SUPPLY CHAIN CONTROL TOWER
+            </div>
+
+            <div class="flow">
+
+                <div class="node">
+
+                    <h3>SUPPLIERS</h3>
+
+                    <p>
+                        Vendor coordination<br>
+                        Purchase Orders
+                    </p>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="node">
+
+                    <h3>PROCUREMENT</h3>
+
+                    <p>
+                        PO vs Invoice<br>
+                        Quantity & Pricing
+                    </p>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="node">
+
+                    <h3>WAREHOUSE</h3>
+
+                    <p>
+                        GRN<br>
+                        Inventory
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Experience -->
+
+    <section id="experience">
+
+        <div class="section-title">
+            02 / Experience
+        </div>
+
+        <h2>
+            My experience.
+        </h2>
+
+        <div class="experience">
+
+            <h3>
+                Category Operations Intern — Procurement
+            </h3>
+
+            <div class="company">
+                Supertails
+            </div>
+
+            <p>
+                8-month internship
+            </p>
+
+            <br>
+
+            <ul>
+
+                <li>
+                    Coordinated purchase orders with 20+ vendors.
+                </li>
+
+                <li>
+                    Managed approximately 200–300 SKUs per week.
+                </li>
+
+                <li>
+                    Supported operations across 7 warehouses.
+                </li>
+
+                <li>
+                    Worked with GRN, PO and invoice reconciliation.
+                </li>
+
+                <li>
+                    Tracked damaged inventory, excess billing,
+                    expiry and shelf-life issues.
+                </li>
+
+                <li>
+                    Coordinated with vendors, delivery partners
+                    and warehouse teams.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <div class="section-title">
+            03 / Projects
+        </div>
+
+        <h2>
+            What I'm building.
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>
+                    Inventory Analytics Dashboard
+                </h3>
+
+                <p>
+                    Power BI dashboard analysing inventory availability,
+                    SKU movement and stock performance.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Vendor Performance Analysis
+                </h3>
+
+                <p>
+                    Analysis of vendor performance, fill rates,
+                    delivery performance and purchase-order accuracy.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Procurement Spend Analysis
+                </h3>
+
+                <p>
+                    Analysing purchasing spend by vendor, category
+                    and time period.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    AI Supply Chain Assistant
+                </h3>
+
+                <p>
+                    Future project exploring how AI can answer
+                    questions about inventory and procurement data.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <div class="section-title">
+            04 / Skills
+        </div>
+
+        <h2>
+            My toolkit.
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">Microsoft Excel</div>
+
+            <div class="skill">Power BI</div>
+
+            <div class="skill">Supply Chain</div>
+
+            <div class="skill">Procurement</div>
+
+            <div class="skill">Inventory Management</div>
+
+            <div class="skill">Vendor Management</div>
+
+            <div class="skill">Data Analytics</div>
+
+            <div class="skill">AI Tools</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <div class="section-title">
+            05 / Contact
+        </div>
+
+        <h2>
+            Let's connect.
+        </h2>
+
+        <p class="about-text">
+
+            I'm open to entry-level opportunities in supply chain,
+            procurement and operations.
+
+        </p>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 Puneeth — Supply Chain & Operations
+
+    </footer>
+
+</body>
+</html>
